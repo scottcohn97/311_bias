@@ -1,5 +1,5 @@
 ---
-title: "311 Bias"
+title: "Bias in 311"
 output: github_document
 ---
 
@@ -7,4 +7,17 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This is the README.
+## Research Question
+
+> *Hypothesis:* There are socio-spatial disparities in 311 reporting
+
+> *Implications:* This leads to unfairness in local government response that perpetuates lack of attention for underserved/neglected communities.
+
+Are there disparities, at the Census block level, in 311 reporting? If so, do these translate to disparities in government response?
+
+## Data
+
+- KCMO Open Data 311 Service Requests
+- KCMO Open Data Housing Property Violations
+- KCMO Citizen Satisfaction Survey
+- ACS 5-Year Estimates (2017)

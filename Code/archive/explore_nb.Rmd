@@ -1,0 +1,205 @@
+---
+title: "Prelim Analysis"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(lubridate)
+library(data.table)
+# library(RJSONIO)
+library(tidygeocoder)
+library(ggthemes)
+```
+
+```{r}
+# import data
+```
+
+
+311 Reports:
+
+- Resident calls and reports violation related to a specific property
+- Triggers creation of 311 report
+- Inspection is done (as needed)
+- If no violation, case closed
+- If yes violation, 1 row per violation
+
+How many service requests?
+
+```{r}
+# num service requests
+df_311 %>% 
+  # 1 = prop issue, 0 = other, NA = don't know
+  mutate(prop_issues = if_else(location_type == "RESIDENTIAL BUILDING", 1, 0)) %>%   
+  # select on nbhd prop issue == 1
+  filter(prop_issues == 1) %>% 
+  # Cases resulting in prop violation
+  # count(status)
+  # closed vs violations
+  # mutate(violations = if_else(, 1, 0))
+  identity()
+  
+
+df_311 %>% count(resolution_description)
+```
+
+
+
+## Maps
+
+What is the ratio of the number of 311 reports resulting in property violations to the total number of 311 reports, by neighborhood?
+
+```{r}
+# merge df_311 and df_hpd on bbl
+
+df_311_hpd <- 
+  df_311 %>%
+  filter(agency == "HPD") %>%
+  mutate(bbl = as.numeric(bbl)) %>%
+  drop_na(agency, bbl) %>%
+  select(1:33) %>%
+  select(!c(agency, agency_name))
+
+df_hpd <- 
+  df_hpd_viol %>%
+  mutate(bbl = as.numeric(bbl)) %>%
+  drop_na(bbl)
+
+nyc_property <- left_join(df_311_hpd, df_hpd)
+
+nyc_property %>% count(censustract)
+```
+
+## Exploratory Graphs
+
+Top 311 requests by percent of total 
+
+```{r}
+df_311 %>% 
+  mutate(complaint_type = if_else(str_detect(complaint_type, "Noise"), 
+                                  "Noise", complaint_type)) %>%
+  group_by(complaint_type) %>% 
+  tally() %>%
+  arrange(desc(n)) %>%
+  rename(complaint_count = n) %>%
+  mutate(total_complaints = sum(complaint_count),
+         complaint_prop = round((complaint_count/total_complaints)*100, 2)) %>%
+  slice(1:10) %>%
+  ungroup() %>%
+  #mutate(complaint_type = factor(complaint_type, levels = complaint_count)) %>%
+  ggplot() +
+  geom_col(aes(x = reorder(complaint_type, complaint_count), 
+               y = complaint_count),
+           fill = "dodgerblue", color = "black") + 
+  labs(x = "Request type", y = "Request Count") +
+  #scale_fill_brewer(palette = "Spectral") +
+  coord_flip() + 
+  theme_clean() +
+  theme(legend.position = "none")
+
+# and make a table
+```
+
+Top 311 agency responders by percent of all requests
+
+```{r}
+df_311 %>% 
+  group_by(agency) %>% 
+  tally() %>%
+  arrange(desc(n)) %>%
+  rename(agency_count = n) %>%
+  mutate(total_agency = sum(agency_count),
+         agency_prop = round((agency_count/total_agency)*100, 2)) %>%
+  slice(1:10) %>%
+  ungroup() %>%
+  #mutate(complaint_type = factor(complaint_type, levels = complaint_count)) %>%
+  ggplot() +
+  geom_col(aes(x = reorder(agency, agency_count), 
+               y = agency_count),
+           fill = "dodgerblue", color = "black") + 
+  labs(x = "Agency type", y = "Request count") +
+  theme_clean() +
+  theme(legend.position = "none")
+```
+
+Longest 311 response time by issue type
+
+```{r}
+
+# Need a bit older data / larger pull
+
+df_311 %>%
+  mutate(created_date = lubridate::ymd_hms(created_date),
+         closed_date = lubridate::ymd_hms(closed_date),
+         resolution_interval = as.double(difftime(closed_date, created_date, units = "days"))) %>% 
+  mutate(complaint_type = if_else(str_detect(complaint_type, "Noise"), 
+                                "Noise", complaint_type)) %>%
+  group_by(complaint_type) %>%
+  summarize(avg_resolution_interval = mean(resolution_interval)) %>%
+  arrange(desc(avg_resolution_interval)) %>%
+  slice(1:10)
+```
+
+311 response types (resolutions) -- includes fixed, did not observe, violation
+
+```{r}
+# recode responses
+df_311 %>%
+  mutate(res_desc_category = case_when(
+    # Did not observe
+    str_detect(resolution_description, "observed no") ~ "did not observe",
+    # Fixed
+    str_detect(resolution_description, "action to fix") ~ "fixed",
+    str_detect(resolution_description, "made an arrest") ~ "fixed",
+    # No Action Taken
+    str_detect(resolution_description, "no evidence of") ~ "no action taken",
+    str_detect(resolution_description, "action was not necessary") ~ "no action taken",
+    str_detect(resolution_description, "condition were gone") ~ "no action taken",
+    str_detect(resolution_description, "unable to gain entry") ~ "no action taken",
+    str_detect(resolution_description, "could not find the individual") ~ "no action taken",
+    # Ambiguous
+    str_detect(resolution_description, "available later") ~ "ambiguous",
+    str_detect(resolution_description, "provided additional information below") ~ "ambiguous",
+    str_detect(resolution_description, "reopening") ~ "ambiguous",
+    # Duplicate
+    str_detect(resolution_description, "duplicate") ~ "duplicate",
+    # Ongoing
+    str_detect(resolution_description, "report was prepared") ~ "ongoing",
+    str_detect(resolution_description, "still open") ~ "ongoing",
+    str_detect(resolution_description, "link below") ~ "ongoing",
+    # Violations Issued
+    str_detect(resolution_description, "violation") ~ "violation",
+    # Wrong Agency
+    str_detect(resolution_description, "does not fall under") ~ "wrong agency"
+    )) %>%
+  group_by(agency) %>%
+  count(res_desc_category)
+
+
+df_311 %>%
+  pull(resolution_description) %>%
+  unique()
+```
+
+311 responses by agency
+
+```{r}
+# plot the above
+```
+
+
+311 contact type by year
+
+```{r}
+df_311 %>%
+  mutate(month = month(lubridate::ymd_hms(created_date)),
+         year = year(lubridate::ymd_hms(created_date))) %>%
+  group_by(open_data_channel_type, year, month) %>%
+  count()
+
+# plot, x = date, y = number requests
+```
+
