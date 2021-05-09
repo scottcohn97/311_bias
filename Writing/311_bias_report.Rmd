@@ -1,0 +1,119 @@
+---
+title: "Bias in 311 Response"
+subtitle: "ECO395M: Data Mining"
+author: 
+  - Scott Cohn:
+      email: scohn@utexas.edu
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
+output:
+  pdf_document:
+    highlight: haddock
+    extra_dependencies: ["flafter", "subfig"]
+    dev: cairo_pdf
+    fig_height: 3
+    fig_width: 5
+    pandoc_args:
+      - --lua-filter=extras/scholarly-metadata.lua
+      - --lua-filter=extras/author-info-blocks.lua
+    includes:
+      in_header: extras/311_bias.sty
+  html_document:
+    highlight: haddock
+    df_print: paged
+    fig_height: 3
+    fig_width: 5
+bibliography: extras/311_bias.bib
+keywords: 'Keywords: A, B, C'
+csl: Extras/the-quarterly-journal-of-economics.csl
+link-citations: yes
+toc: false
+abstract: |-
+  \singlespacing Abstract goes here. See Appendix D for some misc ramblings and thoughts.
+  
+  
+  **Keywords: 311, City governance, Classification**
+---
+
+
+```{r, setup, include=FALSE}
+require(mosaic)   # Load additional packages here 
+
+library(tidyverse)
+library(kableExtra)
+library(ggthemes)
+
+knitr::opts_chunk$set(
+  tidy = FALSE,     # display code as typed
+  size = "small",   # smaller text for code
+  echo = FALSE      # don't show code
+  )   
+```
+
+\doublespacing
+
+## Introduction
+
+
+
+```{r map_figs, fig.cap='Spatial patterns of 311 reports and property violations', fig.align='center', fig.ncol = 4, out.width = "25%", fig.subcap=c('fig1', 'fig2', 'fig3', 'fig3')}
+
+knitr::include_graphics("../Figures/311_at_nbhd_level.png")
+knitr::include_graphics("../Figures/311_nbhd_per_cap.png")
+knitr::include_graphics("../Figures/prop_viol_at_nbhd_level.png")
+knitr::include_graphics("../Figures/prop_viol_nbhd_per_cap.png")
+
+```
+
+
+## Data and Methods
+
+test1
+
+\input{"../Tables/dataset_desc.tex"}
+
+test2
+
+## Results
+
+\input{"../Tables/lr_coef.tex"}
+
+
+test3
+
+```{r, results='asis', out.width="80%", fig.align='center', fig.cap="ROC (Receiver Operating Characteristics) Curve of the logistic regression and random forest model"}
+knitr::include_graphics("../Figures/final_auc_plot.png")
+```
+
+test4
+
+
+## Conclusion
+
+
+
+\newpage
+\singlespacing
+\onecolumn
+
+# References
+
+<div id="refs"></div>
+
+\pagebreak
+
+# Appendix {-} 
+
+## Appendix 
+
+```{r, results='asis', out.width="50%", fig.align='center', fig.cap="311 Service Request Process"}
+knitr::include_graphics("../Figures/311_request_process.png")
+```
+
+## Session Information
+
+(Not run)
+
+```{r eval=FALSE}
+sessionInfo()  
+```
+  

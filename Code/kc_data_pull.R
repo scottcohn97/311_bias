@@ -17,9 +17,7 @@ library(crunch)
 # 2014 - 2017
 # Source: https://data.kcmo.org/Government/Citizen-Satisfaction-Survey-Results-Previous-Years/gphs-q877
 
-# url_css <- "https://data.kcmo.org/resource/gphs-q877.json"
-# sql_css <- ""
-# df_css <- RSocrata::read.socrata(paste0(url_css, sql_css)) # jsonlite::fromJSON()
+# df_css <- readxl::read_xlsx(path = "../311_protected_data/KCMODF_ConsolidatedData_FY13_FY20.xlsx")
 
 # 311 Survey Requests
 # 2013 - present

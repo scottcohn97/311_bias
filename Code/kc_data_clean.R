@@ -2,6 +2,7 @@
 
 library(tidyverse)  # the usual
 library(lubridate)  # dates
+library(janitor)    # clean col names
 
 
 # Load data ---------------------------------------------------------------
@@ -13,42 +14,47 @@ df_311 <- read_csv("Data/kcmo_311_full.csv.gz")
 df_prop_viol <- read_csv("Data/kcmo_prop_viol_full.csv.gz")
 
 # Citizen Satisfaction Survey
-print("<<< Survey TBD >>>")
+df_css <- readxl::read_xlsx(path = "../311_protected_data/KCMODF_ConsolidatedData_FY13_FY20.xlsx")
 
 # Census
 df_acs17 <- read_csv("Data/kcmo_tract_acs_data.csv.gz")
 
 
-# Merge 311 ---------------------------------------------------------------
+# Merge 311 with violations --------------------------------------------------------------
 
 df_311_viol_full <-
   df_311 %>%
   left_join(df_prop_viol, by = c("case_id", "zip_code", "neighborhood", "county", "council_district", "police_district"))
 
-# How many total 311 requests? Opened 2016
-df_311_viol_full %>%
-  filter(creation_year == 2016) %>%
-  nrow() # 162913
+# Clean CSS ---------------------------------------------------------------
 
-# Of req opened in 2016, how many are housing (NHS)? 
-df_311_viol_full %>%
-  filter(creation_year == 2016) %>%
-  filter(department == "NHS") %>% 
-  nrow() # 114688 
+# filter to 2014-2017
+df_css <- 
+  df_css %>% 
+  # filter(str_detect(ID, pattern = c("2014", "2015", "2016", "2017"))) %>% 
+  janitor::clean_names() %>%
+  mutate(
+    year = case_when(
+      str_detect(id, pattern = "2014") ~ 2014,
+      str_detect(id, pattern = "2015") ~ 2015,
+      str_detect(id, pattern = "2016") ~ 2016,
+      str_detect(id, pattern = "2017") ~ 2017
+    )
+  ) %>%
+  drop_na(year)
 
-# Of req opened in 2016, how many are not housing (!= NHS)?
-df_311_viol_full %>%
-  filter(creation_year == 2016) %>%
-  filter(department != "NHS") %>% 
-  nrow() # 48225
+# extract 311 and demographic info
+df_css_311 <-
+  df_css %>% 
+  select(1:3, 7, 24, 130:134, 168, 200:217)
 
-# If housing (NHS) and 2016, how many resulted in prop violations?
-df_311_viol_full %>%
-  filter(creation_year == 2016) %>%
-  filter(department == "NHS") %>%
-  filter(!is.na(violation_code)) %>%
-  nrow() # 71356 ( + 43332 = 114688 total NHS)
+
   
+df_css_311 %>%
+  group_by(quality_of_311_services) %>%
+  summarise(cnt = n()) %>% 
+  ggplot(aes(x = quality_of_311_services, y = cnt)) + 
+  geom_bar(position = "dodge", stat = "identity")
 
-
+  
 
