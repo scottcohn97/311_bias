@@ -1,5 +1,8 @@
 # maps.R
 
+# Dependencies: run kc_data_clean 
+# File too big to upload to git (>100mb)
+
 library(tidyverse)
 library(ggmap)
 library(ggthemes)
