@@ -171,7 +171,7 @@ val_set <- validation_split(survey_other,
                             prop = 0.80)
 val_set
 
-# Penalized regression ----
+# Penalized logistic regression ----
 
 # define model engine
 lr_mod <- 
@@ -211,7 +211,10 @@ lr_plot <-
   geom_point() + 
   geom_line() + 
   ylab("Area under the ROC Curve") +
-  scale_x_log10(labels = scales::label_number())
+  scale_x_log10(labels = scales::label_number()) + 
+  theme_clean()
+
+ggsave("Figures/lr_auc_pen.png", lr_plot, "png")
 
 # Select best model
 top_models <-
@@ -311,11 +314,14 @@ last_lr_fit <-
 last_lr_fit %>% 
   collect_metrics()
 
-last_lr_fit %>% 
+lr_vip <-
+  last_lr_fit %>% 
   pluck(".workflow", 1) %>%   
   pull_workflow_fit() %>% 
   vip(num_features = 20) + 
   theme_clean()
+
+ggsave("Figures/lr_vip.png", lr_vip, "png")
 
 last_lr_auc <-
   last_lr_fit %>% 
@@ -346,11 +352,14 @@ last_rf_fit
 last_rf_fit %>%
   collect_metrics()
 
-last_rf_fit %>% 
+rf_vip <-
+  last_rf_fit %>% 
   pluck(".workflow", 1) %>%   
   pull_workflow_fit() %>% 
   vip(num_features = 20) + 
   theme_clean()
+
+ggsave("Figures/rf_vip.png", rf_vip, "png")
 
 last_rf_auc <-
   last_rf_fit %>% 

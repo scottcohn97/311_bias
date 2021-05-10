@@ -28,8 +28,7 @@ csl: Extras/the-quarterly-journal-of-economics.csl
 link-citations: yes
 toc: false
 abstract: |-
-  \singlespacing Abstract goes here. See Appendix D for some misc ramblings and thoughts.
-  
+  \singlespacing This paper explores the interaction between citizen satisfaction in local government with 311 service usage, and related bias in who may be using these services more. I combine open-access data on 311 service usage and property violations from KCMO OpenData with Census data, and a proprietary citizen satisfaction survey conducted by the Kansas City Office of Performance Management. I find that certain demographics like gender, race, and income affect likelihood of contacting city services, but the strongest predictors of 311 usage are pre-existing and regular interactions with city services --- like recycling, visiting parks, and visiting the city website.
   
   **Keywords: 311 Complaint, City governance, Classification, Bias**
 ---
@@ -82,32 +81,42 @@ The survey data provides insight on the demographics of households that have and
 
 > "*Have you or anyone in your household contacted City's 311 Call Center in the past year?*"
 
-I then use relevant characteristics from the survey to predict the likelihood of 311 usage. To predict the likelihood of 311 usage, I develop two models: a logistic regression and a random forest model. The dependent variable is the binary response to above question:
+I then use relevant characteristics from the survey to predict the likelihood of 311 usage. To predict the likelihood of 311 usage, I develop two models: a penalized logistic regression and a random forest model. The dependent variable is the binary response to above question:
 
 - **0** (311 User) : Respondent has used 311
 - **1** (311 Non-User): Respondent has not used 311
 
-The coefficients used, and their categories/type are in Table \ref{tab:variables}.
+The coefficients used, and their categories/type are in Table \ref{tab:variables}. 
 
 \input{"../Tables/var_input.tex"}
 
+The logistic regression uses a tuned penalty hyperparameter to give less weight to less relevant predictors in the modeling process. This penalty is the total amount of regularization in the model and is tuned over an expanded grid with the alpha value. I have set $\alpha = 1$ in this specification, leading to a pure LASSO.
+
+The random forest model uses two tuned hyperparameters with 1000 trees: `mtry` and `min_n`. These are the number of variables to possibly split at each node and the minimal node size, respectively. Again, these are tuned over an expanded grid. This process is sped up using parallelization.
+
 ## Results
+
+Table 3 and Figure 2 show the results of the logistic model. Figure 2 also shows the results of the random forest model. Both results perform similarly (AUC of 0.67 and 0.655). 
 
 \input{"../Tables/lr_coef.tex"}
 
-
-test3
-
-```{r, results='asis', out.width="80%", fig.align='center', fig.cap="ROC (Receiver Operating Characteristics) Curve of the logistic regression and random forest model"}
+```{r auc_plot, results='asis', out.width="80%", fig.align='center', fig.cap="ROC (Receiver Operating Characteristics) Curve of the logistic regression and random forest model"}
 knitr::include_graphics("../Figures/final_auc_plot.png")
 ```
 
-test4
+The results suggest that older women with lower incomes, are non-white, and are property owners are more likely to make use of 311 services. The intuition behind these demographics make sense. Households with lower income may be more reliant on these services to take care of non-emergencies and households with lower incomes may be more likely to face these issues in the first place. Since the survey is anonymous and unable to be linked directly to census data and voting records, these kind of extrapolations are made with caution.
 
+Further, as hypothesized, civic engagement seems to be more strongly associated with usage of 311 services. Those who visit one or more of the city website, the community website, and park, as well as those who recycle, are associated most strongly with 311 service requests. This might suggest that interaction with city governance more regularly might make a household more aware that 311 is available, or increase the service's salience in their life.
+
+Overall, these results suggest non-trivial associations with between socioeconomic characteristics, civic engagement, and citizen satisfaction with 311 reporting behavior.
 
 ## Conclusion
 
+Previous studies on 311 reporting has to extrapolate the characteristics of the household making the report from unlinked census data about the area. Information is thus limited to expected income for the building, and other associated characteristics with the neighborhood or block-level characteristics. This was an obstacle in analyzing 311 data from New York City's OpenData portal. The citizen satisfaction survey in Kansas City is unique in that it allows for a link between 311 usage and characteristics of interest that allow the city to understand how their services are being used and to what extent they are valued.
 
+## Acknowledgements
+
+I'd like to thank the the Kansas City Office of Performance Management for providing the data used in this study. In particular, Kate Bender was very gracious in expeditiously helping me get data from OPM and jump through the necessary bureaucratic hoops. As always, thank you Stack Exchange contributors.
 
 \newpage
 \singlespacing
@@ -121,17 +130,24 @@ test4
 
 # Appendices {-} 
 
-## Appendix A -- 311 Request Process
+## Appendix A -- Figures
 
 ```{r, results='asis', out.width="45%", fig.align='center', fig.cap="311 Service Request Process"}
 knitr::include_graphics("../Figures/311_request_process.png")
 ```
 
+```{r vip_figs, fig.cap='Variable importance', fig.align='center', fig.ncol = 2, out.width = "50%", fig.subcap=c('Logistic regression', 'Random Forest')}
+
+knitr::include_graphics("../Figures/lr_vip.png")
+knitr::include_graphics("../Figures/rf_vip.png")
+
+```
+
+\newpage
+
 ## Appendix B -- Session Information
 
-(Not run)
-
-```{r eval=FALSE}
+```{r eval=TRUE}
 sessionInfo()  
 ```
   

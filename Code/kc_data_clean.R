@@ -7,13 +7,14 @@ library(janitor)    # clean col names
 
 # Load data ---------------------------------------------------------------
 
-# 311
+# 311 -- MUST RUN `kc_data_pull.R` FIRST -- TOO BIG FOR GH (>100MB)
 df_311 <- read_csv("Data/kcmo_311_full.csv.gz")
 
 # Housing Violations
 df_prop_viol <- read_csv("Data/kcmo_prop_viol_full.csv.gz")
 
-# Citizen Satisfaction Survey
+# Citizen Satisfaction Survey -- PROPRIETARY DATA
+# See data sharing agreement in \Data
 df_css <- readxl::read_xlsx(path = "../311_protected_data/KCMODF_ConsolidatedData_FY13_FY20.xlsx")
 
 # Census
