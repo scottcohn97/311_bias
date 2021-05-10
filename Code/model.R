@@ -145,6 +145,7 @@ kcmo_survey %>%
   count(contacted_311) %>% 
   mutate(prop = n/sum(n)) 
   # seems split pretty evenly... 
+  # 5474 yes (47%)
 
 # train/test and validation sets ----
 set.seed(123)
