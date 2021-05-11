@@ -7,7 +7,7 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This repo contains the code and data for reproducing *Bias in 311 Response*.
+This repo contains the code and data for reproducing *Bias in 311 Response*. See `replication_notes.md`.
 
 > **Abstract:** This paper explores the interaction between citizen satisfaction in local government with 311 service usage, and related bias in who may be using these services more. I combine open-access data on 311 service usage and property violations from KCMO OpenData with Census data, and a proprietary citizen satisfaction survey conducted by the Kansas City Office of Performance Management. I find that certain demographics like gender, race, and income affect likelihood of contacting city services, but the strongest predictors of 311 usage are pre-existing and regular interactions with city services — like recycling, visiting parks, and visiting the city website.
 >

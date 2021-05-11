@@ -3,6 +3,8 @@
 # Dependencies: run kc_data_clean 
 # File too big to upload to git (>100mb)
 
+# NOTE: The ggsave calls take ~forever~ so I just exported to png because I was impatient
+
 library(tidyverse)
 library(ggmap)
 library(ggthemes)

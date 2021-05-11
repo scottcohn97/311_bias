@@ -2,7 +2,7 @@ Bias in 311 Response
 ================
 
 This repo contains the code and data for reproducing *Bias in 311
-Response*.
+Response*. See `replication_notes.md`.
 
 > **Abstract:** This paper explores the interaction between citizen
 > satisfaction in local government with 311 service usage, and related
