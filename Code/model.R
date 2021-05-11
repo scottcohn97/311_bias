@@ -1,6 +1,6 @@
 # model.R
 
-# Dependencies: run kc_data_clean
+# Dependencies: load parallel folder with \311_protected_data
 
 # libs and funcs ---
 
@@ -19,9 +19,10 @@ get_model <- function(x) {
 }
 
 # Load data ----
-# NOTE: This is protected data and is only available on request from KCMO City Gov't
+#' NOTE: This is protected data and is only available on request from KCMO City Gov't
+#' Please note the file path is external to the repository
 kcmo_survey <- 
-  # load
+  # load 
   read_csv("../311_protected_data/KCMODF_ConsolidatedData_FY13_FY20.csv") %>%
   # select years
   filter(YEAR %in% c("FY2014_15", "FY2015_16", "FY2016_17")) %>%

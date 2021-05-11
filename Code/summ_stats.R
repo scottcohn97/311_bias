@@ -1,7 +1,6 @@
 # sum_stat.R
 # run cleaning script first and keep var in namespace
 
-
 # Respondents who have used 311 at least once (CSS)
 # 1 = yes, 2 = no, 9 = don't know
 df_css_311 %>% 

@@ -28,11 +28,11 @@ csl: Extras/the-quarterly-journal-of-economics.csl
 link-citations: yes
 toc: false
 abstract: |-
-  \singlespacing This paper explores the interaction between citizen satisfaction in local government with 311 service usage, and related bias in who may be using these services more. I combine open-access data on 311 service usage and property violations from KCMO OpenData with Census data, and a proprietary citizen satisfaction survey conducted by the Kansas City Office of Performance Management. I find that certain demographics like gender, race, and income affect likelihood of contacting city services, but the strongest predictors of 311 usage are pre-existing and regular interactions with city services --- like recycling, visiting parks, and visiting the city website.
+  \singlespacing This paper explores the interaction between citizen satisfaction in local government with 311 service usage, and related bias in who may be using these services more. I combine open-access data on 311 service usage and property violations from KCMO OpenData with Census data, and a proprietary citizen satisfaction survey conducted by the Kansas City Office of Performance Management. I find that certain demographics like gender, race, and income affect likelihood of contacting city services, but the strongest predictors of 311 usage are pre-existing and regular interactions with city services --- like recycling, visiting parks, and visiting the city website. **Disclaimer:** Burnout this semester has killed my ability to produce work that I deem high quality. Regardless, I hope you find this satisfactory. 
   
   **Keywords: 311 Complaint, City governance, Classification, Bias**
+  
 ---
-
 
 ```{r, setup, include=FALSE}
 require(mosaic)   # Load additional packages here 
@@ -58,7 +58,7 @@ However, some instances of city department response may be prone to bias. Bias c
 
 The use of the citizen satisfaction survey, administered quarterly, provides depth to the 311 data, allowing me to estimate likelihood of 311 contact from demographic and socioeconomic characteristics as well as political engagement and overall citizen satisfaction. The survey is a stratified sample across city council districts based on a balanced population against census demographics. 
 
-Following @kontokosta2018, I hypothesize that increased citizen satisfaction and political participation is associated with increased likelihood for 311 usage. This paper is organized as follows: section two describes the data sources and estimation methodology, section three presents the results, and section four concludes.
+Following @kontokosta2018, I hypothesize that increased citizen satisfaction and political participation is associated with increased likelihood for 311 usage. Largely, I replicate their research process. Although, it should be noted that do not publish their code or data (or respond to emails). All data-pulls, cleaning, and model creation is mine (errors included). This paper is organized as follows: section two describes the data sources and estimation methodology, section three presents the results, and section four concludes.
 
 ## Data and Methods
 
@@ -77,7 +77,7 @@ knitr::include_graphics("../Figures/prop_viol_nbhd_per_cap.png")
 
 ```
 
-The survey data provides insight on the demographics of households that have and have *not* contacted 311. Since the survey data is random sample across neighborhoods, there should be no disparity due to individual level factors. The survey is split on a single question:
+The survey data provides insight on the demographics of households that have and have *not* contacted 311. Since the survey data is randomly sampled across neighborhoods, there should be no disparity due to individual level factors. The survey is split on a single question:
 
 > "*Have you or anyone in your household contacted City's 311 Call Center in the past year?*"
 
@@ -96,7 +96,7 @@ The random forest model uses two tuned hyperparameters with 1000 trees: `mtry` a
 
 ## Results
 
-Table 3 and Figure 2 show the results of the logistic model. Figure 2 also shows the results of the random forest model. Both results perform similarly (AUC of 0.67 and 0.655). 
+Table 3 and Figure 2 show the results of the logistic model. Figure 2 also shows the results of the random forest model. Both results perform similarly (AUC of 0.67 and 0.655). These are comparable with the results of @kontokosta2018 who achieve an AUC of 0.69 using a logistic regression.^[No details are given in their paper about how they clean or adjust covariates.]
 
 \input{"../Tables/lr_coef.tex"}
 
@@ -106,7 +106,7 @@ knitr::include_graphics("../Figures/final_auc_plot.png")
 
 The results suggest that older women with lower incomes, are non-white, and are property owners are more likely to make use of 311 services. The intuition behind these demographics make sense. Households with lower income may be more reliant on these services to take care of non-emergencies and households with lower incomes may be more likely to face these issues in the first place. Since the survey is anonymous and unable to be linked directly to census data and voting records, these kind of extrapolations are made with caution.
 
-Further, as hypothesized, civic engagement seems to be more strongly associated with usage of 311 services. Those who visit one or more of the city website, the community website, and park, as well as those who recycle, are associated most strongly with 311 service requests. This might suggest that interaction with city governance more regularly might make a household more aware that 311 is available, or increase the service's salience in their life.
+Further, as hypothesized, civic engagement seems to be more strongly associated with usage of 311 services. Those who visit one or more of the city website, the community website, and park, as well as those who recycle, are associated most strongly with 311 service requests. This might suggest that interaction with city governance more regularly might make a household more aware that 311 is available, or increase the service's salience in their life. Figure 4 in Appendix A illustrates measures of variable importance for both models.
 
 Overall, these results suggest non-trivial associations with between socioeconomic characteristics, civic engagement, and citizen satisfaction with 311 reporting behavior.
 

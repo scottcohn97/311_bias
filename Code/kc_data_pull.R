@@ -1,5 +1,7 @@
 # Kansas City Data collection
 
+# Call API, Load Data, Save to compressed .csv in /Data
+
 library(tidyverse)  # the usual
 library(lubridate)  # dates
 library(tidycensus) # ACS
@@ -12,14 +14,7 @@ library(jsonlite)
 library(glue)  
 library(crunch)
 
-
-# Citizen Satisfaction Survey (CSS)
-# 2014 - 2017
-# Source: https://data.kcmo.org/Government/Citizen-Satisfaction-Survey-Results-Previous-Years/gphs-q877
-
-# df_css <- readxl::read_xlsx(path = "../311_protected_data/KCMODF_ConsolidatedData_FY13_FY20.xlsx")
-
-# 311 Survey Requests
+# 311 Survey Requests ----
 # 2013 - present
 # Source: https://data.kcmo.org/311/311-Call-Center-Service-Requests-2007-March-2021/7at3-sxhp
 
@@ -30,7 +25,7 @@ df_311 <- RSocrata::read.socrata(paste0(url_311, sql_311)) # jsonlite::fromJSON(
 rm(url_311, sql_311)
 crunch::write.csv.gz(df_311, file = "Data/kcmo_311_full.csv.gz")
 
-# Property Violations
+# Property Violations ----
 # 2015 - present
 # Source: https://data.kcmo.org/Housing/Property-Violations/nhtf-e75a
 
@@ -41,11 +36,11 @@ df_prop_viol <- RSocrata::read.socrata(paste0(url_prop_viol, sql_prop_viol)) # j
 rm(url_prop_viol, sql_prop_viol)
 crunch::write.csv.gz(df_prop_viol, file = "Data/kcmo_prop_viol_full.csv.gz")
 
-# Census Population (ACS)
+# Census Population (ACS) ----
 # 2017
 
 # view var
-v17 <- load_variables(2017, "acs5", cache = F)
+v17 <- tidycensus::load_variables(2017, "acs5", cache = F)
 View(v17)
 rm(v17)
 
@@ -69,14 +64,18 @@ acs_var <- c(
 
 mo_counties <- c("jackson", "clay", "platte", "clay")
 
-df_acs <- get_acs(
+# census_api_key = "INSERT CENSUS KEY HERE"
+# ... and uncomment lines 77/78
+
+df_acs <- tidycensus::get_acs(
   state = "MO",
   county = mo_counties,
   geography = "tract",
   variables = acs_var,
   survey = "acs5",
   geometry = F,
-  output = "wide"
+  output = "wide" #,
+  # key = census_api_key
 )
 
 # mo shape file

@@ -1,5 +1,7 @@
 # Kansas City Data Merge and Tidy
 
+# Used in conjunction with summ_stats.R
+
 library(tidyverse)  # the usual
 library(lubridate)  # dates
 library(janitor)    # clean col names
@@ -7,7 +9,7 @@ library(janitor)    # clean col names
 
 # Load data ---------------------------------------------------------------
 
-# 311 -- MUST RUN `kc_data_pull.R` FIRST -- TOO BIG FOR GH (>100MB)
+# 311 -- MUST RUN 311 section of `kc_data_pull.R` FIRST -- TOO BIG FOR GH (>100MB)
 df_311 <- read_csv("Data/kcmo_311_full.csv.gz")
 
 # Housing Violations
@@ -48,7 +50,6 @@ df_css <-
 df_css_311 <-
   df_css %>% 
   select(1:3, 7, 24, 130:134, 168, 200:217)
-
 
   
 df_css_311 %>%
