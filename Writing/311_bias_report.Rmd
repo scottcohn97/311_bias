@@ -1,6 +1,6 @@
 ---
 title: "Bias in 311 Response"
-subtitle: "ECO395M: Data Mining"
+subtitle: "ECO395M: Data Mining^[See code: https://github.com/scottcohn97/311_bias]"
 author: 
   - Scott Cohn:
       email: scohn@utexas.edu

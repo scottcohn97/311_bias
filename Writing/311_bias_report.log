@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  11 MAY 2021 15:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  12 MAY 2021 21:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -699,35 +699,35 @@ LaTeX Info: Redefining \addtolength on input line 81.
 ) (./311_bias_report.aux)
 \openout1 = `311_bias_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 136.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 137.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 137.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Try loading font information for T1+pplx on input line 136.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 137.
+LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Try loading font information for T1+pplx on input line 137.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1pplx.fd
 File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
 )
-LaTeX Info: Redefining \microtypecontext on input line 136.
+LaTeX Info: Redefining \microtypecontext on input line 137.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
@@ -768,7 +768,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring ON on input line 136.
+Package hyperref Info: Link coloring ON on input line 137.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -776,9 +776,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count159
 )
-LaTeX Info: Redefining \ref on input line 136.
-LaTeX Info: Redefining \pageref on input line 136.
-LaTeX Info: Redefining \nameref on input line 136.
+LaTeX Info: Redefining \ref on input line 137.
+LaTeX Info: Redefining \pageref on input line 137.
+LaTeX Info: Redefining \nameref on input line 137.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -823,19 +823,19 @@ Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
 Package caption Info: threeparttable package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+zeur on input line 137.
+LaTeX Font Info:    Try loading font information for U+zeur on input line 138.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeus on input line 137.
+LaTeX Font Info:    Try loading font information for U+zeus on input line 138.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/eulervm/uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-eus.cfg
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeuex on input line 137.
+LaTeX Font Info:    Try loading font information for U+zeuex on input line 138.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
@@ -844,7 +844,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 137.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 138.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -852,25 +852,30 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 137.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 138.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 137
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 138
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 137
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 138
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
+LaTeX Font Info:    Try loading font information for TS1+pplx on input line 138
+.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1pplx.fd
+File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
+)
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 138.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 139.
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 159.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 160.
 [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (../Tab
@@ -879,40 +884,38 @@ Overfull \hbox (31.14882pt too wide) in paragraph at lines 6--39
  [][] 
  []
 
-) [2]
-<../Figures/311_at_nbhd_level.png, id=37, 508.90125pt x 436.63126pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+)
+<../Figures/311_at_nbhd_level.png, id=27, 508.90125pt x 436.63126pt>
 File: ../Figures/311_at_nbhd_level.png Graphic file (type png)
 <use ../Figures/311_at_nbhd_level.png>
 Package pdftex.def Info: ../Figures/311_at_nbhd_level.png  used on input line 2
-34.
+35.
 (pdftex.def)             Requested size: 211.39197pt x 181.37181pt.
-<../Figures/311_nbhd_per_cap.png, id=39, 508.90125pt x 436.63126pt>
+<../Figures/311_nbhd_per_cap.png, id=29, 508.90125pt x 436.63126pt>
 File: ../Figures/311_nbhd_per_cap.png Graphic file (type png)
 <use ../Figures/311_nbhd_per_cap.png>
 Package pdftex.def Info: ../Figures/311_nbhd_per_cap.png  used on input line 23
-4.
+5.
 (pdftex.def)             Requested size: 211.39197pt x 181.37181pt.
-<../Figures/prop_viol_at_nbhd_level.png, id=40, 508.90125pt x 436.63126pt>
+<../Figures/prop_viol_at_nbhd_level.png, id=30, 508.90125pt x 436.63126pt>
 File: ../Figures/prop_viol_at_nbhd_level.png Graphic file (type png)
 <use ../Figures/prop_viol_at_nbhd_level.png>
 Package pdftex.def Info: ../Figures/prop_viol_at_nbhd_level.png  used on input 
-line 234.
+line 235.
 (pdftex.def)             Requested size: 211.39197pt x 181.37181pt.
-<../Figures/prop_viol_nbhd_per_cap.png, id=41, 508.90125pt x 436.63126pt>
+<../Figures/prop_viol_nbhd_per_cap.png, id=31, 508.90125pt x 436.63126pt>
 File: ../Figures/prop_viol_nbhd_per_cap.png Graphic file (type png)
 <use ../Figures/prop_viol_nbhd_per_cap.png>
 Package pdftex.def Info: ../Figures/prop_viol_nbhd_per_cap.png  used on input l
-ine 234.
+ine 235.
 (pdftex.def)             Requested size: 211.39197pt x 181.37181pt.
-[3 <../Figures/311_at_nbhd_level.png> <../Figures/311_nbhd_per_cap.png> <../Fig
-ures/prop_viol_at_nbhd_level.png> <../Figures/prop_viol_nbhd_per_cap.png>]
-LaTeX Font Info:    Try loading font information for TS1+pplx on input line 259
-.
-(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1pplx.fd
-File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
-)
+[2] [3 <../Figures/311_at_nbhd_level.png> <../Figures/311_nbhd_per_cap.png> <..
+/Figures/prop_viol_at_nbhd_level.png> <../Figures/prop_viol_nbhd_per_cap.png>]
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 259.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 260.
 (../Tables/var_input.tex
 
 LaTeX Warning: No positions in optional float specifier.
@@ -924,7 +927,7 @@ Overfull \hbox (59.31468pt too wide) in paragraph at lines 5--23
  []
 
 )
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 276.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 277.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -933,56 +936,56 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 )
-<../Figures/final_auc_plot.png, id=60, 2312.64pt x 1363.0925pt>
+<../Figures/final_auc_plot.png, id=61, 2312.64pt x 1363.0925pt>
 File: ../Figures/final_auc_plot.png Graphic file (type png)
 <use ../Figures/final_auc_plot.png>
-Package pdftex.def Info: ../Figures/final_auc_plot.png  used on input line 296.
+Package pdftex.def Info: ../Figures/final_auc_plot.png  used on input line 297.
 
 (pdftex.def)             Requested size: 375.7819pt x 221.4895pt.
 [4] [5 <../Figures/final_auc_plot.png>] [6] [7]
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 362.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 363.
 [8
 
 ]
-<../Figures/311_request_process.png, id=104, 867.24pt x 1355.0625pt>
+<../Figures/311_request_process.png, id=105, 867.24pt x 1355.0625pt>
 File: ../Figures/311_request_process.png Graphic file (type png)
 <use ../Figures/311_request_process.png>
 Package pdftex.def Info: ../Figures/311_request_process.png  used on input line
- 397.
+ 398.
 (pdftex.def)             Requested size: 211.38394pt x 330.2874pt.
-<../Figures/lr_vip.png, id=105, 1940.24875pt x 1805.74625pt>
+<../Figures/lr_vip.png, id=106, 1940.24875pt x 1805.74625pt>
 File: ../Figures/lr_vip.png Graphic file (type png)
 <use ../Figures/lr_vip.png>
-Package pdftex.def Info: ../Figures/lr_vip.png  used on input line 406.
+Package pdftex.def Info: ../Figures/lr_vip.png  used on input line 407.
 (pdftex.def)             Requested size: 234.8626pt x 218.58139pt.
-<../Figures/rf_vip.png, id=106, 1940.24875pt x 1805.74625pt>
+<../Figures/rf_vip.png, id=107, 1940.24875pt x 1805.74625pt>
 File: ../Figures/rf_vip.png Graphic file (type png)
 <use ../Figures/rf_vip.png>
-Package pdftex.def Info: ../Figures/rf_vip.png  used on input line 406.
+Package pdftex.def Info: ../Figures/rf_vip.png  used on input line 407.
 (pdftex.def)             Requested size: 234.8626pt x 218.58139pt.
 
-Overfull \hbox (5.79018pt too wide) in paragraph at lines 406--407
+Overfull \hbox (5.79018pt too wide) in paragraph at lines 407--408
  [][][][] 
  []
 
 [9 <../Figures/311_request_process.png>] [10 <../Figures/lr_vip.png> <../Figure
 s/rf_vip.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 463.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 464.
 [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 463.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 464.
 (./311_bias_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 463.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 463.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 464.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 464.
  ) 
 Here is how much of TeX's memory you used:
- 16504 strings out of 492616
- 243193 string characters out of 6129482
- 363782 words of memory out of 5000000
- 19833 multiletter control sequences out of 15000+600000
- 94118 words of font info for 263 fonts, out of 8000000 for 9000
+ 16511 strings out of 492616
+ 243304 string characters out of 6129482
+ 366837 words of memory out of 5000000
+ 19838 multiletter control sequences out of 15000+600000
+ 96460 words of font info for 267 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,16n,49p,814b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,16n,49p,814b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -997,10 +1000,10 @@ texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2019/texmf-dist
 /fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/
 type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/u
 rw/palatino/uplri8a.pfb>
-Output written on 311_bias_report.pdf (11 pages, 704347 bytes).
+Output written on 311_bias_report.pdf (11 pages, 704739 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
+ 198 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
  50 named destinations out of 1000 (max. 500000)
  30833 words of extra memory for PDF output out of 35830 (max. 10000000)
 
